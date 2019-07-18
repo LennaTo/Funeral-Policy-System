@@ -1,0 +1,61 @@
+﻿@model IEnumerable<FuneralPolicyApp.Models.Policy>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>My Policies</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PolicyNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Premium)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SumAssured)
+        </th>
+
+
+
+        <th>
+            @Html.DisplayNameFor(model => model.AgentName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.PolicyNo)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Premium)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SumAssured)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.AgentName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Status)
+    </td>
+
+    <td>
+        @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+        @Html.ActionLink("Dependents", "ViewDependants", new { PolicyNo = item.PolicyNo }) |
+        @Html.ActionLink("PayPremium", "PayPremium", new { id = item.ID })
+    </td>
+</tr>
+}
+
+</table>

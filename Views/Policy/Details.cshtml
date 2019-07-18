@@ -1,0 +1,59 @@
+﻿@model FuneralPolicyApp.ViewModels.PolicyDetailsViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Policy</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Policy.PolicyNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Policy.PolicyNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Policy.Premium)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Policy.Premium)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Policy.SumAssured)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Policy.SumAssured)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Policy.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Policy.Status)
+        </dd>
+
+        
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Policy.AgentName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Policy.AgentName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

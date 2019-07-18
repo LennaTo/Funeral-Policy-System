@@ -1,0 +1,57 @@
+﻿@model IEnumerable<FuneralPolicyApp.Models.Policy>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PolicyNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Premium)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SumAssured)
+        </th>
+        
+        
+        
+        <th>
+            @Html.DisplayNameFor(model => model.AgentName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PolicyNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Premium)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SumAssured)
+        </td>
+                
+        <td>
+            @Html.DisplayFor(modelItem => item.AgentName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+            @Html.ActionLink("Dependents", "ViewDependants", new { PolicyNo = item.PolicyNo }) |
+            @Html.ActionLink("Add Dependents", "AddDependant", new { PolicyNo = item.PolicyNo }) |
+            @Html.ActionLink("Add Comment", "AddComment", new { PolicyNo = item.PolicyNo }) |
+            @Html.ActionLink("Pay Premium", "Index", "Premium")
+        </td>
+    </tr>
+}
+
+</table>
